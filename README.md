@@ -5,6 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
+devise, letter_opener
+
+
 * Ruby version
 
 * System dependencies
