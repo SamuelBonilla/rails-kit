@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_29_030430) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_31_034835) do
+  create_table "auth_groups", force: :cascade do |t|
+    t.string "role"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "auth_memberships", force: :cascade do |t|
+    t.integer "auth_id", null: false
+    t.integer "auth_group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auth_group_id"], name: "index_auth_memberships_on_auth_group_id"
+    t.index ["auth_id"], name: "index_auth_memberships_on_auth_id"
+  end
+
   create_table "auths", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -37,4 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_29_030430) do
     t.index ["unlock_token"], name: "index_auths_on_unlock_token", unique: true
   end
 
+  add_foreign_key "auth_memberships", "auth_groups"
+  add_foreign_key "auth_memberships", "auths"
 end
