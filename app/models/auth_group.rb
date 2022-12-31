@@ -1,0 +1,2 @@
+class AuthGroup < ApplicationRecord
+end
