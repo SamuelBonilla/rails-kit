@@ -33,6 +33,9 @@ You can access the session for this scope:
 
 auth_session
 
+### admin
+
+http://127.0.0.1:3000/motor_admin
 
 
 * Ruby version

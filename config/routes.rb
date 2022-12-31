@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Motor::Admin => '/motor_admin'
   devise_for :auth, controllers: {
     registrations: 'auth/registrations'
   }
