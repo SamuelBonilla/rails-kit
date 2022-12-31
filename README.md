@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-devise, letter_opener
+devise, letter_opener, rails console in the browser, user role base auth
 
 
 * Ruby version
